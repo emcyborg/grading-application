@@ -1,3 +1,8 @@
+let form = document.querySelector("#grading-form");
+form.addEventListener("submit", (event) => {
+  submitForm(event);
+});
+
 function submitForm(e) {
   e.preventDefault();
   let total = 0;
@@ -13,6 +18,6 @@ function submitForm(e) {
   } catch (error) {
     console.error(error);
   }
-  var percentage = (total / 400) * 100;
-  document.getElementById("result").innerHTML = percentage;
+
+  document.getElementById("result").innerHTML = `${(total / 400) * 100}`;
 }
